@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: netty_handle
+  profiles:
+    active: dev

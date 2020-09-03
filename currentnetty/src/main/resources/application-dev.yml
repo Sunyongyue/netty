@@ -1,0 +1,40 @@
+server:
+  port: 10068
+netty:
+  # 端口号
+  port: 7567
+  # 最大线程数
+  maxThreads: 1024
+  # 数据包的最大长度
+  max_frame_length: 65535
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.tianhe.currentnetty.entity
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1
+      max-lifetime: 30000
+      maximum-pool-size: 10
+      minimum-idle: 3
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/db_dtu_monitor?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: root
+  redis:
+    database: 1
+    host: localhost
+    password: sdunicom
+    port: 6380
+    timeout: 6000ms
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  main:
+    allow-bean-definition-overriding: true
+
